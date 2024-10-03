@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "WhatsApp Chat Manipulator",
+    "version": "3.0",
+    "description": "Enhance your WhatsApp Web experience with the WhatsApp Chat Manipulator extension! This tool allows you to manipulate chat text by reversing messages and displaying them alongside the original content. Choose your preferred language, and the extension will show a contextual note indicating the selected language. Perfect for adding a fun twist to your conversations or for a unique text analysis experience.",
+    "icons": {
+        "128": "icon128.png"
+    },
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://web.whatsapp.com/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
